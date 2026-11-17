@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="FoodSwing - Taste in Motion. Order delicious food online in Bangladesh.">
+  <title>FoodSwing | Taste in Motion</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+  <nav class="navbar container">
+    <a href="#home" class="logo">
+      <img src="images/logo.png" alt="FoodSwing logo">
+      <span>Food<span>Swing</span></span>
+    </a>
+
+    <button class="menu-toggle" id="menu-toggle" aria-label="Open navigation menu">
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <div class="nav-links" id="nav-links">
+      <a href="#home">Home</a>
+      <a href="#menu">Menu</a>
+      <a href="#offers">Offers</a>
+      <a href="#how-it-works">How It Works</a>
+      <a href="#contact">Contact</a>
+    </div>
+
+    <div class="nav-actions">
+      <form class="nav-search" id="nav-search-form">
+        <i class="fas fa-search"></i>
+        <input type="search" id="nav-search" placeholder="Search food...">
+      </form>
+      <button class="login-btn" id="login-btn">Login</button>
+      <button class="cart-nav" id="open-cart" aria-label="Open shopping cart">
+        <i class="fas fa-shopping-bag"></i>
+        <span class="cart-count" id="cart-count">0</span>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <section class="hero" id="home">
+    <div class="hero-background" id="hero-gallery" role="group" aria-label="Featured food slideshow">
+      <div class="hero-slide hero-slide-kacchi active" role="img" aria-label="Traditional Dhaka kacchi biryani"></div>
+      <div class="hero-slide hero-slide-burger" role="img" aria-label="Freshly grilled gourmet burger" aria-hidden="true"></div>
+      <div class="hero-slide hero-slide-pizza" role="img" aria-label="Hot oven-baked pizza" aria-hidden="true"></div>
+      <div class="hero-slide hero-slide-lemonade" role="img" aria-label="Fresh chilled lemonade" aria-hidden="true"></div>
+    </div>
+    <div class="hero-overlay" aria-hidden="true"></div>
+    <div class="container hero-content">
+      <div class="hero-text reveal">
+        <span class="eyebrow"><i class="fas fa-bolt"></i> Fast delivery, fresh food</span>
+        <h1>Taste in <span>Motion.</span></h1>
+        <p>Craving something delicious? Your favourite food is just a few clicks away. Fresh meals, fast delivery and unforgettable taste.</p>
+
+        <form class="location-form" id="location-form">
+          <i class="fas fa-location-dot"></i>
+          <input type="text" id="location-input" placeholder="Enter your delivery area" aria-label="Delivery location" required>
+          <button type="submit">Find Food <i class="fas fa-arrow-right"></i></button>
+        </form>
+        <div class="hero-features">
+          <span><i class="fas fa-check-circle"></i> Fresh food</span>
+          <span><i class="fas fa-clock"></i> Fast delivery</span>
+          <span><i class="fas fa-heart"></i> Made with care</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-controls">
+      <div class="hero-photo-caption" aria-live="polite">
+        <span>FoodSwing favorites</span>
+        <strong id="hero-photo-title">Dhaka Kacchi Biryani</strong>
+      </div>
+      <div class="hero-gallery-dots" role="group" aria-label="Choose featured food photo">
+        <button type="button" class="active" data-hero-slide="0" aria-label="Show kacchi biryani photo" aria-pressed="true"></button>
+        <button type="button" data-hero-slide="1" aria-label="Show burger photo" aria-pressed="false"></button>
+        <button type="button" data-hero-slide="2" aria-label="Show pizza photo" aria-pressed="false"></button>
+        <button type="button" data-hero-slide="3" aria-label="Show lemonade photo" aria-pressed="false"></button>
+      </div>
+    </div>
+  </section>
+
+  <section class="category-section container">
+    <div class="section-heading">
+      <div><span class="eyebrow">Explore our menu</span><h2>What are you craving?</h2></div>
+    </div>
+    <div class="category-list" id="category-list">
+      <button class="category-chip active" data-category="All"><i class="fas fa-border-all"></i> All</button>
+      <button class="category-chip" data-category="Burger"><i class="fas fa-burger"></i> Burger</button>
+      <button class="category-chip" data-category="Pizza"><i class="fas fa-pizza-slice"></i> Pizza</button>
+      <button class="category-chip" data-category="Chicken"><i class="fas fa-drumstick-bite"></i> Chicken</button>
+      <button class="category-chip" data-category="Biriyani"><i class="fas fa-bowl-food"></i> Biriyani</button>
+      <button class="category-chip" data-category="Pasta"><i class="fas fa-utensils"></i> Pasta</button>
+      <button class="category-chip" data-category="Rice and Curry"><i class="fas fa-bowl-rice"></i> Rice & Curry</button>
+      <button class="category-chip" data-category="Drinks"><i class="fas fa-glass-water"></i> Drinks</button>
+      <button class="category-chip" data-category="Desserts"><i class="fas fa-ice-cream"></i> Desserts</button>
+    </div>
+  </section>
+
+  <section class="offers-section" id="offers">
+    <div class="container">
+      <div class="section-heading">
+        <div><span class="eyebrow">Special deals</span><h2>Offers you will love</h2></div>
+      </div>
+
+      <div class="offers-grid">
+        <article class="offer-box offer-red">
+          <span class="offer-label">FIRST ORDER</span>
+          <h3>30% OFF</h3>
+          <p>On your first delicious order.</p>
+          <div class="promo-copy"><strong>SWING30</strong><button data-copy="SWING30">Copy Code</button></div>
+        </article>
+        <article class="offer-box offer-blue">
+          <span class="offer-label">PIZZA SPECIAL</span>
+          <h3>Buy 1 Get 1</h3>
+          <p>Enjoy more pizza with your friends.</p>
+          <div class="promo-copy"><strong>PIZZA2</strong><button data-copy="PIZZA2">Copy Code</button></div>
+        </article>
+        <article class="offer-box offer-green">
+          <span class="offer-label">DELIVERY DEAL</span>
+          <h3>Free Delivery</h3>
+          <p>Orders above ৳599 already qualify.</p>
+          <div class="promo-copy"><strong>FREEDEL</strong><button data-copy="FREEDEL">Copy Code</button></div>
+        </article>
+        <article class="offer-box offer-dark">
+          <span class="offer-label">COMBO DEAL</span>
+          <h3>Combo ৳399</h3>
+          <p>Save more on your next order.</p>
+          <div class="promo-copy"><strong>COMBO50</strong><button data-copy="COMBO50">Copy Code</button></div>
+        </article>
+      </div>
+
+      <div class="flash-deal">
+        <div><i class="fas fa-fire"></i> Today's Flash Deal <span>Limited time offer!</span></div>
+        <div class="countdown" id="countdown">00 : 00 : 00</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="menu-section container" id="menu">
+    <div class="section-heading menu-heading">
+      <div><span class="eyebrow">Made fresh for you</span><h2>Explore our menu</h2><p>Find your favourite meal from our delicious collection.</p></div>
+      <div class="menu-controls">
+        <input type="search" id="food-search" placeholder="Search food...">
+        <select id="sort-select" aria-label="Sort food">
+          <option value="default">Sort by: Recommended</option>
+          <option value="low">Price: Low to High</option>
+          <option value="high">Price: High to Low</option>
+          <option value="rating">Top Rated</option>
+        </select>
+      </div>
+    </div>
+    <div class="food-grid" id="food-grid"></div>
+    <p class="no-results" id="no-results" hidden>No items found. Try another search or category.</p>
+  </section>
+
+  <section class="restaurants-section">
+    <div class="container">
+      <div class="section-heading">
+        <div><span class="eyebrow">Top picks</span><h2>Popular restaurants</h2><p>Discover great food from popular local restaurants.</p></div>
+      </div>
+      <div class="restaurant-grid" id="restaurant-grid"></div>
+    </div>
+  </section>
+
+  <section class="how-section container" id="how-it-works">
+    <div class="section-heading centered">
+      <span class="eyebrow">Simple and easy</span>
+      <h2>How FoodSwing works</h2>
+      <p>Good food is only three simple steps away.</p>
+    </div>
+    <div class="steps-grid">
+      <article class="step-card"><div class="step-icon"><i class="fas fa-utensils"></i></div><span>01</span><h3>Choose your food</h3><p>Explore our menu and pick the meal you love.</p></article>
+      <article class="step-card"><div class="step-icon"><i class="fas fa-motorcycle"></i></div><span>02</span><h3>Place your order</h3><p>Add your favourite items and complete checkout.</p></article>
+      <article class="step-card"><div class="step-icon"><i class="fas fa-face-smile"></i></div><span>03</span><h3>Enjoy your meal</h3><p>Relax while your fresh food arrives at your door.</p></article>
+    </div>
+  </section>
+</main>
+
+<footer class="footer" id="contact">
+  <div class="container footer-grid">
+    <div class="footer-about">
+      <a href="#home" class="logo footer-logo"><img src="images/logo.png" alt="FoodSwing logo"><span>Food<span>Swing</span></span></a>
+      <p>FoodSwing brings delicious food and memorable moments together. Fresh taste, fast delivery and a little happiness in every bite.</p>
+      <div class="social-links">
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+      </div>
+    </div>
+    <div><h3>Quick Links</h3><a href="#home">Home</a><a href="#menu">Our Menu</a><a href="#offers">Offers</a><a href="#how-it-works">How It Works</a></div>
+    <div><h3>Contact Us</h3><p><i class="fas fa-location-dot"></i> Dhaka, Bangladesh</p><p><i class="fas fa-phone"></i> +880 1000-000000</p><p><i class="fas fa-envelope"></i> hello@example.com</p></div>
+    <div><h3>Opening Hours</h3><p>Every day</p><p>10:00 AM – 11:00 PM</p><p>Fresh food, all day long.</p></div>
+  </div>
+  <div class="footer-bottom"><div class="container">© 2026 FoodSwing. All rights reserved. Made with care in Bangladesh.</div></div>
+</footer>
+
+<div class="overlay" id="overlay"></div>
+
+<aside class="cart-drawer" id="cart-drawer" aria-label="Shopping cart">
+  <div class="drawer-header"><h2>Your Cart <span id="drawer-count">(0)</span></h2><button class="icon-btn" id="close-cart" aria-label="Close cart"><i class="fas fa-xmark"></i></button></div>
+  <div class="cart-items" id="cart-items"></div>
+  <div class="cart-bottom">
+    <div class="promo-input"><input type="text" id="promo-input" placeholder="Enter promo code"><button id="apply-promo">Apply</button></div>
+    <p class="promo-message" id="promo-message"></p>
+    <div class="total-row"><span>Subtotal</span><strong id="subtotal">৳0</strong></div>
+    <div class="total-row"><span>Delivery Fee</span><strong id="delivery-fee">৳60</strong></div>
+    <div class="total-row discount-row"><span>Discount</span><strong id="discount">-৳0</strong></div>
+    <div class="total-row grand-total"><span>Total</span><strong id="total">৳60</strong></div>
+    <button class="checkout-btn" id="checkout-btn">Proceed to Checkout <i class="fas fa-arrow-right"></i></button>
+    <button class="clear-cart" id="clear-cart">Clear Cart</button>
+  </div>
+</aside>
+
+<div class="modal" id="checkout-modal" role="dialog" aria-modal="true" aria-labelledby="checkout-title">
+  <div class="modal-box">
+    <button class="modal-close icon-btn" id="close-checkout" aria-label="Close checkout"><i class="fas fa-xmark"></i></button>
+    <div id="checkout-content">
+      <span class="eyebrow">Almost there</span>
+      <h2 id="checkout-title">Complete your order</h2>
+      <p class="modal-subtitle">Enter your details to receive your delicious food.</p>
+      <form id="checkout-form" novalidate>
+        <label for="customer-name">Full Name</label>
+        <input id="customer-name" type="text" placeholder="Your full name">
+        <small class="field-error" id="name-error"></small>
+
+        <label for="customer-phone">Phone Number</label>
+        <input id="customer-phone" type="tel" placeholder="01XXXXXXXXX" maxlength="11">
+        <small class="field-error" id="phone-error"></small>
+
+        <label for="customer-address">Delivery Address</label>
+        <textarea id="customer-address" rows="3" placeholder="House, road, area, city"></textarea>
+        <small class="field-error" id="address-error"></small>
+        <div class="delivery-pin-box">
+          <div>
+            <strong><i class="fas fa-location-crosshairs"></i> Add a map pin</strong>
+            <span id="delivery-pin-status" role="status">Optional — share your current location so the rider can find you.</span>
+          </div>
+          <div class="delivery-pin-actions">
+            <button type="button" id="share-delivery-location"><i class="fas fa-location-dot"></i> Use my location</button>
+            <a id="delivery-pin-map" target="_blank" rel="noopener noreferrer" hidden>Preview pin</a>
+            <button type="button" id="clear-delivery-location" hidden>Remove</button>
+          </div>
+        </div>
+
+        <label for="payment-method">Payment Method</label>
+        <select id="payment-method">
+          <option value="Cash on Delivery">Cash on Delivery</option>
+        </select>
+
+        <div class="checkout-summary"><span>Order Total</span><strong id="checkout-total">৳0</strong></div>
+        <button type="submit" class="checkout-btn">Place Order <i class="fas fa-check"></i></button>
+      </form>
+    </div>
+    <div id="order-success" hidden></div>
+  </div>
+</div>
+
+<div class="modal" id="auth-modal" role="dialog" aria-modal="true" aria-labelledby="auth-title">
+  <div class="modal-box auth-modal-box">
+    <button class="modal-close icon-btn" id="close-auth" aria-label="Close login"><i class="fas fa-xmark"></i></button>
+    <div id="auth-forms">
+      <span class="eyebrow">Welcome to FoodSwing</span>
+      <h2 id="auth-title">Login or create an account</h2>
+      <p class="modal-subtitle" id="auth-subtitle">Customer accounts use your Bangladeshi phone number.</p>
+      <div class="auth-role-tabs" role="group" aria-label="Account type">
+        <button type="button" class="auth-tab active" data-auth-role="customer">Customer</button>
+        <button type="button" class="auth-tab" data-auth-role="admin">Admin</button>
+        <button type="button" class="auth-tab" data-auth-role="rider">Rider</button>
+      </div>
+
+      <div id="customer-auth-panel">
+        <div class="auth-mode-tabs" role="group" aria-label="Customer login mode">
+          <button type="button" class="auth-mode active" data-customer-mode="login">Login</button>
+          <button type="button" class="auth-mode" data-customer-mode="register">Create account</button>
+        </div>
+        <form id="customer-auth-form" class="auth-form" novalidate>
+          <div id="register-name-field" hidden>
+            <label for="auth-name">Full Name</label>
+            <input id="auth-name" type="text" autocomplete="name" maxlength="120" placeholder="Your full name">
+          </div>
+          <label for="auth-phone">Phone Number</label>
+          <input id="auth-phone" type="tel" autocomplete="tel" maxlength="11" placeholder="01XXXXXXXXX" required>
+          <label for="auth-password">Password</label>
+          <input id="auth-password" type="password" autocomplete="current-password" minlength="8" maxlength="72" placeholder="At least 8 characters" required>
+          <p class="auth-message" id="customer-auth-message" aria-live="polite"></p>
+          <button type="submit" class="checkout-btn" id="customer-auth-submit">Login</button>
+        </form>
+      </div>
+
+      <form id="admin-auth-form" class="auth-form" hidden novalidate>
+        <label for="admin-email">Admin Email</label>
+        <input id="admin-email" type="email" autocomplete="username" maxlength="254" value="admin@foodswing.local" required>
+        <label for="admin-password">Password</label>
+        <div class="password-field">
+          <input id="admin-password" type="password" autocomplete="current-password" minlength="12" maxlength="72" placeholder="Admin password" required>
+          <button type="button" class="password-toggle" id="toggle-admin-password" aria-label="Show password" aria-pressed="false"><i class="fas fa-eye"></i></button>
+        </div>
+        <p class="auth-message" id="admin-auth-message" aria-live="polite"></p>
+        <button type="submit" class="checkout-btn">Admin Login</button>
+      </form>
+
+      <div id="rider-auth-panel" hidden>
+        <div class="auth-mode-tabs" role="group" aria-label="Rider account mode">
+          <button type="button" class="auth-mode active" data-rider-mode="login">Login</button>
+          <button type="button" class="auth-mode" data-rider-mode="register">Create account</button>
+        </div>
+        <form id="rider-auth-form" class="auth-form" novalidate>
+          <div id="rider-register-fields" hidden>
+            <label for="rider-name">Full name</label>
+            <input id="rider-name" type="text" autocomplete="name" minlength="3" maxlength="120" placeholder="Your full name">
+            <label for="rider-area">Delivery area</label>
+            <input id="rider-area" type="text" autocomplete="address-level2" minlength="2" maxlength="120" placeholder="e.g. Dhanmondi, Dhaka">
+            <label for="rider-vehicle">Vehicle type</label>
+            <input id="rider-vehicle" type="text" minlength="2" maxlength="40" placeholder="Bicycle or motorcycle">
+            <label for="rider-registration">Vehicle registration</label>
+            <input id="rider-registration" type="text" minlength="2" maxlength="40" placeholder="Vehicle registration number">
+          </div>
+          <label for="rider-phone">Phone number</label>
+          <input id="rider-phone" type="tel" autocomplete="username" inputmode="numeric" maxlength="11" placeholder="01XXXXXXXXX" required>
+          <label for="rider-password">Password</label>
+          <input id="rider-password" type="password" autocomplete="current-password" minlength="12" maxlength="72" placeholder="At least 12 characters" required>
+        <p class="auth-message" id="rider-auth-message" aria-live="polite"></p>
+          <button type="submit" class="checkout-btn" id="rider-auth-submit">Rider Login</button>
+        </form>
+      </div>
+    </div>
+
+    <div id="auth-current" hidden>
+      <span class="eyebrow">Signed in</span>
+      <h2 id="auth-current-name"></h2>
+      <p class="modal-subtitle" id="auth-current-details"></p>
+      <div id="admin-auth-note" hidden>
+        <p class="auth-message">Admin session active. Admin order API access is enabled for this session.</p>
+        <button type="button" class="checkout-btn" id="admin-dashboard-link">Open Admin Dashboard</button>
+      </div>
+      <div id="rider-auth-note" hidden>
+        <p class="auth-message">Rider session active. Open your assigned deliveries.</p>
+        <button type="button" class="checkout-btn" id="rider-dashboard-link">Open Rider Portal</button>
+      </div>
+      <button type="button" class="clear-cart auth-logout" id="auth-logout">Log out</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast-container" id="toast-container" aria-live="polite"></div>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="FoodSwing rider delivery portal.">
+  <title>Rider Portal | FoodSwing</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="rider.css">
+</head>
+<body>
+  <header class="rider-header">
+    <a class="brand" href="/">
+      <img src="images/logo.png" alt="">
+      <span>Food<span>Swing</span> <small>RIDER</small></span>
+    </a>
+    <div class="rider-user">
+      <span id="rider-name"></span>
+      <button type="button" class="logout-button" id="rider-logout"><i class="fas fa-right-from-bracket"></i> Log out</button>
+    </div>
+  </header>
+
+  <main class="rider-dashboard">
+    <section class="rider-heading">
+      <div>
+        <span class="eyebrow">Delivery operations</span>
+        <h1>Your deliveries</h1>
+        <p>Accept assigned orders, pick them up, and mark them delivered.</p>
+      </div>
+      <div class="availability">
+        <span id="availability-label">Checking status…</span>
+        <button type="button" class="refresh-button" id="refresh-deliveries">Refresh orders</button>
+        <button type="button" id="availability-toggle" disabled>Go online</button>
+      </div>
+    </section>
+
+    <p class="rider-message" id="rider-message" aria-live="polite"></p>
+    <div class="delivery-toolbar" id="delivery-toolbar">
+      <div class="rider-history-tabs" role="group" aria-label="Filter deliveries">
+        <button type="button" class="active" data-delivery-filter="active">Active deliveries</button>
+        <button type="button" data-delivery-filter="history">Delivery history</button>
+      </div>
+      <span id="delivery-count" aria-live="polite"></span>
+    </div>
+    <section class="delivery-list" id="delivery-list" aria-live="polite"></section>
+  </main>
+
+  <script src="rider.js"></script>
+</body>
+</html>

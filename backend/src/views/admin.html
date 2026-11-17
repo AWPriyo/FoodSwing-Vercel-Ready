@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="FoodSwing admin order dashboard.">
+  <title>Admin Dashboard | FoodSwing</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+  <header class="admin-header">
+    <a class="brand" href="/">
+      <img src="images/logo.png" alt="">
+      <span>Food<span>Swing</span> <small>ADMIN</small></span>
+    </a>
+    <div class="admin-user">
+      <span id="admin-email"></span>
+      <button type="button" class="logout-button" id="admin-logout"><i class="fas fa-right-from-bracket"></i> Log out</button>
+    </div>
+  </header>
+
+  <main class="dashboard">
+    <section class="page-heading">
+      <div>
+        <span class="eyebrow">Restaurant operations</span>
+        <h1>Order dashboard</h1>
+        <p>Review incoming orders and keep customers up to date.</p>
+      </div>
+      <button type="button" class="refresh-button" id="refresh-orders"><i class="fas fa-rotate"></i> Refresh</button>
+    </section>
+
+    <section class="summary-grid" aria-label="Recent order summary">
+      <article class="summary-card">
+        <span>Total orders</span><strong id="total-orders">—</strong><i class="fas fa-receipt"></i>
+      </article>
+      <article class="summary-card">
+        <span>Needs attention</span><strong id="pending-orders">—</strong><i class="fas fa-bell"></i>
+      </article>
+      <article class="summary-card">
+        <span>Recent sales</span><strong id="recent-sales">—</strong><i class="fas fa-chart-line"></i>
+      </article>
+    </section>
+
+    <section class="riders-section">
+      <div class="orders-toolbar">
+        <div>
+          <h2>Rider management</h2>
+          <p>Create rider accounts and manage their availability and access.</p>
+        </div>
+      </div>
+      <form class="rider-create-form" id="rider-create-form">
+        <label>Full name<input id="new-rider-name" type="text" minlength="3" maxlength="120" required></label>
+        <label>Phone<input id="new-rider-phone" type="tel" inputmode="numeric" pattern="01[3-9][0-9]{8}" maxlength="11" placeholder="01XXXXXXXXX" required></label>
+        <label>Temporary password<input id="new-rider-password" type="password" minlength="12" maxlength="72" required></label>
+        <label>Delivery area<input id="new-rider-area" type="text" minlength="2" maxlength="120" required></label>
+        <label>Vehicle type<input id="new-rider-vehicle" type="text" minlength="2" maxlength="40" placeholder="Bicycle / Motorcycle" required></label>
+        <label>Vehicle registration<input id="new-rider-registration" type="text" minlength="2" maxlength="40" required></label>
+        <button type="submit">Create rider account</button>
+      </form>
+      <div class="riders-list" id="riders-list" aria-live="polite"></div>
+    </section>
+
+    <section class="orders-section">
+      <div class="orders-toolbar">
+        <div>
+          <h2>Recent orders</h2>
+          <p>Showing the latest 100 orders.</p>
+        </div>
+        <div class="filters">
+          <input type="search" id="order-search" placeholder="Search order or customer" aria-label="Search orders">
+          <select id="status-filter" aria-label="Filter by status">
+            <option value="all">All statuses</option>
+            <option>Pending</option>
+            <option>Confirmed</option>
+            <option>Preparing</option>
+            <option>Out for delivery</option>
+            <option>Delivered</option>
+            <option>Cancelled</option>
+          </select>
+        </div>
+      </div>
+      <p class="dashboard-message" id="dashboard-message" aria-live="polite"></p>
+      <div class="orders-list" id="orders-list" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <script src="admin.js"></script>
+</body>
+</html>
